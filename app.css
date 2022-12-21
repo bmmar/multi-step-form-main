@@ -42,7 +42,13 @@ h1 {
   font-weight: 500;
   color: hsl(0, 0%, 100%);
 }
-.card-page-one {
+
+.sidebar-number:nth-child(2) {
+  background-color:hsl(228, 100%, 84%);
+  color:hsl(213, 96%, 18%);
+}
+
+.card, .card-page-one, .card-page-two {
   background-color: hsl(0, 0%, 100%);
   max-width: 75%;
   margin: 0 auto;
@@ -82,15 +88,25 @@ input::placeholder {
     font-size: 0.9rem;
 }
 
-.next-step {
-  float: right;
+.next-step, .go-back {  
   color: white;
   background-color: hsl(213, 96%, 18%);
   padding: 10px 15px;
   border-radius: 5px;
-  font-family: "Ubuntu", sans-serif;
-  margin-right: 5%;
+  font-family: "Ubuntu", sans-serif;  
 }
+
+.next-step {
+  float: right;
+  margin-right: -5%;
+  margin-top: 50%;
+}
+
+.go-back {
+  float: left;
+  margin-top: 50%;
+}
+
 
 .step,
 .sidebar-text {
@@ -102,6 +118,55 @@ input::placeholder {
 .step-four,
 .step-five {
   display: none;
+}
+
+.card-page-two {
+  display: none;
+}
+
+.choice {
+  border: 1px solid hsl(229, 24%, 87%);;
+  border-radius: 5px;
+  margin: 5% 0;
+  display: flex;
+  align-items:center;
+  cursor:pointer;
+}
+
+.choice:hover {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+
+.choice p {
+  margin: 5%;
+}
+
+.choice img {
+  padding: 15px 0px 15px 15px;
+}
+
+span.bold-text {
+  font-weight:700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+span.price {
+  color:hsl(229, 24%, 70%);
+  font-size: .85rem;
+  padding-top: 5px;
+}
+
+.inactive {
+  display: none;
+  
+}
+
+.active {
+  display: block;
+  /* position: absolute; */
+  /* top: 50px; */
 }
 
 /************** Footer ****************/

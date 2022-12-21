@@ -28,7 +28,8 @@
         <div class="sidebar">
           <!-- Sidebar start -->
 
-          <span class="step">Step</span><span class="sidebar-number">1</span>
+          <span class="step">Step</span>
+          <span class="sidebar-number">1</span>
           <span class="sidebar-text">Your info</span>
           <span class="step">Step</span><span class="sidebar-number">2</span>
           <span class="sidebar-text">Select plan</span>
@@ -39,50 +40,84 @@
 
           <!-- Sidebar end -->
         </div>
-        <div class="card-page-one">
+        <div class="card">
           <!-- Step 1 start -->
-          <h1>Personal info</h1>
-          <div class="input-area">
-            <div class="request-text">
-              Please provide your name, email address, and phone number.
+          <div class="step-one">
+            <h1>Personal info</h1>
+            <div class="input-area">
+              <div class="request-text">
+                Please provide your name, email address, and phone number.
+              </div>
+              <label for="full-name">Name</label>
+              <input
+                type="text"
+                id="full-name"
+                name="full-name"
+                placeholder="e.g. Stephen King"
+              />
+              <label for="email">Email Address</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder=" e.g. stephenking@lorem.com"
+              />
+              <label for="phone-number">Phone Number</label>
+              <input
+                type="text"
+                id="phone-number"
+                name="phone-number"
+                placeholder=" e.g. +1 234 567 890"
+              />
             </div>
-            <label for="full-name">Name</label>
-            <input
-              type="text"
-              id="full-name"
-              name="full-name"
-              placeholder="e.g. Stephen King"
-            />
-            <label for="email">Email Address</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder=" e.g. stephenking@lorem.com"
-            />
-            <label for="phone-number">Phone Number</label>
-            <input
-              type="text"
-              id="phone-number"
-              name="phone-number"
-              placeholder=" e.g. +1 234 567 890"
-            />
+            <button class="next-step">Next Step</button>
+          </div>
+
+          <!-- Step 1 end -->
+
+          <div class="step-two" id="step-two">
+            <!-- Step 2 start -->
+
+            <h1>Select your plan</h1>
+            <div class="request-text">
+              You have the option of monthly or yearly billing.
+            </div>
+            <div class="select-options-container">
+              <div class="choice">
+                <img src="./assets/images/icon-arcade.svg" alt="Arcade Icon" />
+                <p>
+                  <span class="bold-text">Arcade</span>
+                  <span class="price">$9/mo</span> 
+                  </p>
+              </div>
+              <div class="choice">
+                <img
+                  src="./assets/images/icon-advanced.svg"
+                  alt="Advanced Icon"
+                />
+                <p>
+                  <span class="bold-text">Advanced</span>
+                  <span class="price">$12/mo</span>                  
+                </p>
+              </div>
+              <div class="choice">
+                <img src="./assets/images/icon-pro.svg" alt="Pro Icon" />
+                <p>
+                  <span class="bold-text">Pro</span>
+                  <span class="price">$15/mo</span>                 
+                </p>
+              </div>
+            </div>
+            Monthly Yearly
+            <button class="go-back">Go Back</button>
+            <button class="next-step">Next Step</button>
+
+            <!-- Step 2 end -->
           </div>
         </div>
       </div>
-      <button class="next-step">Next Step</button>
-      
     </div>
 
-    <!-- Step 1 end -->
-    <div class="step-two">
-      <!-- Step 2 start -->
-
-      Select your plan You have the option of monthly or yearly billing. Arcade
-      $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step
-
-      <!-- Step 2 end -->
-    </div>
     <div class="step-three">
       <!-- Step 3 start -->
 
@@ -119,5 +154,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
+    <script src="./multi.js"></script>
   </body>
 </html>
