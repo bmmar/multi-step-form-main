@@ -25,44 +25,79 @@
   <body>
     <div class="wrapper-blank">
       <div class="main-bkg">
-        <div class="sidebar">
-          <!-- Sidebar start -->
+        <div class="image-container">
+          <div class="sidebar">
+            <!-- Sidebar start -->
+            <div class="sidebar-num-and-text">
+              <span class="sidebar-number number-one">1</span>
+              <div class="step-and-text">
+                <span class="step">Step 1</span>
+                <span class="sidebar-text">Your info</span>
+              </div>
+            </div>
+            <div class="sidebar-num-and-text">
+              <span class="sidebar-number number-two">2</span>
+              <div class="step-and-text">
+                <span class="step">Step 2</span>
+                <span class="sidebar-text">Select plan</span>
+              </div>
+            </div>
+            <div class="sidebar-num-and-text">
+              <span class="sidebar-number number-three">3</span>
+              <div class="step-and-text">
+                <span class="step">Step 3</span>
+                <span class="sidebar-text">Add-ons</span>
+              </div>
+            </div>
+            <div class="sidebar-num-and-text">
+              <span class="sidebar-number number-four">4</span>
+              <div class="step-and-text">
+                <span class="step">Step 4</span>
+                <span class="sidebar-text">Summary</span>
+              </div>
+            </div>
 
-          <span class="step">Step</span>
-          <span class="sidebar-number">1</span>
-          <span class="sidebar-text">Your info</span>
-          <span class="step">Step</span><span class="sidebar-number">2</span>
-          <span class="sidebar-text">Select plan</span>
-          <span class="step">Step</span><span class="sidebar-number">3</span>
-          <span class="sidebar-text">Add-ons</span>
-          <span class="step">Step</span><span class="sidebar-number">4</span>
-          <span class="sidebar-text">Summary</span>
-
-          <!-- Sidebar end -->
+            <!-- Sidebar end -->
+          </div>
         </div>
         <div class="card">
-          <!-- Step 1 start -->
+          <!-------------- Step 1 start --------------->
           <div class="step-one">
             <h1>Personal info</h1>
             <div class="input-area">
               <div class="request-text">
                 Please provide your name, email address, and phone number.
               </div>
-              <label for="full-name">Name</label>
+              <label for="full-name"
+                >Name
+                <span class="error-text name-error-text"
+                  >This field is required</span
+                >
+              </label>
               <input
                 type="text"
                 id="full-name"
                 name="full-name"
                 placeholder="e.g. Stephen King"
               />
-              <label for="email">Email Address</label>
+              <label for="email"
+                >Email Address
+                <span class="error-text email-error-text"
+                  >This field is required</span
+                >
+              </label>
               <input
                 type="text"
                 id="email"
                 name="email"
                 placeholder=" e.g. stephenking@lorem.com"
               />
-              <label for="phone-number">Phone Number</label>
+              <label for="phone-number"
+                >Phone Number
+                <span class="error-text phone-error-text"
+                  >This field is required</span
+                >
+              </label>
               <input
                 type="text"
                 id="phone-number"
@@ -70,89 +105,205 @@
                 placeholder=" e.g. +1 234 567 890"
               />
             </div>
-            <button class="next-step">Next Step</button>
           </div>
 
           <!-- Step 1 end -->
 
           <div class="step-two" id="step-two">
-            <!-- Step 2 start -->
+            <!----------------- Step 2 start ----------------------->
 
             <h1>Select your plan</h1>
             <div class="request-text">
               You have the option of monthly or yearly billing.
             </div>
             <div class="select-options-container">
-              <div class="choice">
+              <div class="monthly-choice monthly-arcade">
                 <img src="./assets/images/icon-arcade.svg" alt="Arcade Icon" />
                 <p>
                   <span class="bold-text">Arcade</span>
-                  <span class="price">$9/mo</span> 
-                  </p>
+                  <span class="price">$9/mo</span>
+                </p>
               </div>
-              <div class="choice">
+              <div class="monthly-choice monthly-advanced">
                 <img
                   src="./assets/images/icon-advanced.svg"
                   alt="Advanced Icon"
                 />
                 <p>
                   <span class="bold-text">Advanced</span>
-                  <span class="price">$12/mo</span>                  
+                  <span class="price">$12/mo</span>
                 </p>
               </div>
-              <div class="choice">
+              <div class="monthly-choice monthly-pro">
                 <img src="./assets/images/icon-pro.svg" alt="Pro Icon" />
                 <p>
                   <span class="bold-text">Pro</span>
-                  <span class="price">$15/mo</span>                 
+                  <span class="price">$15/mo</span>
+                </p>
+              </div>
+
+              <!-- **********  Annual rates start here  ************ -->
+              <div class="annual-choice annual-arcade">
+                <img src="./assets/images/icon-arcade.svg" alt="Arcade Icon" />
+                <p>
+                  <span class="bold-text">Arcade</span>
+                  <span class="price">$90/yr</span>
+                  <span class="two-months-free">2 months free</span>
+                </p>
+              </div>
+              <div class="annual-choice annual-advanced">
+                <img
+                  src="./assets/images/icon-advanced.svg"
+                  alt="Advanced Icon"
+                />
+                <p>
+                  <span class="bold-text">Advanced</span>
+                  <span class="price">$120/yr</span>
+                  <span class="two-months-free">2 months free</span>
+                </p>
+              </div>
+              <div class="annual-choice annual-pro">
+                <img src="./assets/images/icon-pro.svg" alt="Pro Icon" />
+                <p>
+                  <span class="bold-text">Pro</span>
+                  <span class="price">$150/yr</span>
+                  <span class="two-months-free">2 months free</span>
                 </p>
               </div>
             </div>
-            Monthly Yearly
-            <button class="go-back">Go Back</button>
-            <button class="next-step">Next Step</button>
+            <div class="monthly-yearly-container">
+              Monthly
+              <label class="switch">
+                <input type="checkbox" id="monthly-yearly-choice" />
+              </label>
+              Yearly
+            </div>
 
-            <!-- Step 2 end -->
+            <!------------- Step 2 end --------------->
+          </div>
+
+          <div class="step-three">
+            <!------------- Step 3 start ------------->
+            <h1>Pick add-ons</h1>
+            <div class="request-text">
+              Add-ons help enhance your gaming experience.
+            </div>
+            <div class="monthly-choice-p3 online-service-p3">
+              <label class="form-control">
+                <input
+                  class="options"
+                  type="checkbox"
+                  name="checkbox"
+                  id="online"
+                />
+                <label for="online"></label>
+              </label>
+              <div class="middle-text">
+                <span class="bold-text bold-text-p3">Online service</span>
+                <span class="smaller-text">Access to multiplayer games</span>
+              </div>
+              <span class="price-p3 monthly-price-p3">+$1/mo</span>
+              <span class="price-p3 annual-price-p3">+$10/yr</span>
+            </div>
+            <div class="monthly-choice-p3 larger-storage-p3">
+              <label class="form-control">
+                <input
+                  class="options"
+                  type="checkbox"
+                  name="checkbox"
+                  id="larger-storage"
+                />
+                <label for="larger-storage"></label>
+              </label>
+              <div class="middle-text">
+                <span class="bold-text bold-text-p3">Larger storage</span>
+                <span class="smaller-text">Extra 1TB of cloud save</span>
+              </div>
+              <span class="price-p3 monthly-price-p3">+$2/mo</span>
+              <span class="price-p3 annual-price-p3">+$20/yr</span>
+            </div>
+            <div class="monthly-choice-p3 customizable-p3">
+              <label class="form-control">
+                <input
+                  class="options"
+                  type="checkbox"
+                  name="checkbox"
+                  id="customizable"
+                />
+                <label for="customizable"></label>
+              </label>
+              <div class="middle-text">
+                <span class="bold-text bold-text-p3">Customizable Profile</span>
+                <span class="smaller-text">Custom theme on your profile</span>
+              </div>
+              <span class="price-p3 monthly-price-p3">+$2/mo</span>
+              <span class="price-p3 annual-price-p3">+$20/yr</span>
+            </div>
+
+            <!--------------- Step 3 end ---------------------->
+          </div>
+          <div class="step-four">
+            <!--------------- Step 4 start -------------------->
+
+            <h1>Finishing up</h1>
+            <div class="request-text">
+              Double-check everything looks OK before confirming.
+            </div>
+            <div class="grid-container">
+              <div class="totals-container">
+                <!-- Dynamically add subscription and add-on selections here -->
+                <div class="plan-holder" id="plan-holder"></div>
+                <div class="price-p4-plan">$0</div>
+                <a id="change-link">Change</a>
+                <hr class="h-ruler" />
+                <div class="p4-text online-holder"></div>
+                <div class="price-p4 online-price-p4"></div>
+                <div class="p4-text larger-holder"></div>
+                <div class="price-p4 larger-price-p4"></div>
+                <div class="p4-text customizable-holder"></div>
+                <div class="price-p4 customizable-price-p4"></div>
+              </div>
+              <div class="total-cost">Total (per</div>
+              <div class="total-price-p4">$</div>
+            </div>
+            <!---------------- Step 4 end ---------------------->
+          </div>
+          <div class="step-five">
+            <!-- Step 5 start -->
+            <img src="./assets/images/icon-thank-you.svg" alt="Large tick" />
+            <h1>Thank you!</h1>
+            <p class="thanks">Thanks for confirming your subscription!</p>
+            <p>
+              We hope you have fun using our platform. If you ever need support,
+              please feel free to email us at support@loremgaming.com.
+            </p>
+
+            <!-- Step 5 end -->
           </div>
         </div>
       </div>
+      <div class="navigation-buttons navigation-buttons-p1">
+        <button class="next-step next-step-p1">Next Step</button>
+      </div>
+      <div class="navigation-buttons navigation-buttons-p2">
+        <button class="go-back">Go Back</button>
+        <button class="next-step next-step-p2">Next Step</button>
+      </div>
+      <div class="navigation-buttons navigation-buttons-p3">
+        <button class="go-back go-backP3">Go Back</button>
+        <button class="next-step next-step-p3">Next Step</button>
+      </div>
+      <div class="navigation-buttons navigation-buttons-p4">
+        <button class="go-back go-backP4">Go Back</button>
+        <button class="next-step next-step-p4">Confirm</button>
+      </div>
     </div>
 
-    <div class="step-three">
-      <!-- Step 3 start -->
-
-      Pick add-ons Add-ons help enhance your gaming experience. Online service
-      Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
-      +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go Back
-      Next Step
-
-      <!-- Step 3 end -->
-    </div>
-    <div class="step-four">
-      <!-- Step 4 start -->
-
-      Finishing up Double-check everything looks OK before confirming.
-
-      <!-- Dynamically add subscription and add-on selections here -->
-
-      Total (per month/year) Go Back Confirm
-
-      <!-- Step 4 end -->
-    </div>
-    <div class="step-five">
-      <!-- Step 5 start -->
-
-      Thank you! Thanks for confirming your subscription! We hope you have fun
-      using our platform. If you ever need support, please feel free to email us
-      at support@loremgaming.com.
-
-      <!-- Step 5 end -->
-    </div>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="#">Brian Marshall</a>.
     </div>
     <script src="./multi.js"></script>
   </body>

@@ -17,38 +17,53 @@ h1 {
 
 .wrapper-blank {
   width: 100%;
-  height: 100%;
+  height: 101%;
 }
 
 .main-bkg {
   background-color: hsl(217, 100%, 97%);
-  height: 80%;
+  height: 86%;
   margin: 10% 0 5%;
   background-image: url("./assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
 }
 
 .sidebar {
-  padding: 10% 0 7%;
+  padding: 10% 10% 7%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+.sidebar-text {
+  color: hsl(217, 100%, 97%);
+  padding: 5% 0;
 }
 
 .sidebar-number {
   border-radius: 50%;
   border: 1px solid hsl(0, 0%, 100%);
-  padding: 2% 3.5%;
-  margin: 0 2%;
+  padding: 78% 112%;
+  /* margin: 0 auto; */
   font-weight: 500;
+  font-size: 0.9em;
+  color: hsl(228, 100%, 84%);
+}
+
+.number-highlight {
+  background-color: hsl(228, 100%, 84%);
+  color: hsl(213, 96%, 18%);
+}
+
+.number-unhighlight {
   color: hsl(0, 0%, 100%);
+  background-color: unset;
 }
 
-.sidebar-number:nth-child(2) {
-  background-color:hsl(228, 100%, 84%);
-  color:hsl(213, 96%, 18%);
-}
-
-.card, .card-page-one, .card-page-two {
+.card,
+.card-page-one,
+.card-page-two {
   background-color: hsl(0, 0%, 100%);
   max-width: 75%;
   margin: 0 auto;
@@ -65,14 +80,21 @@ h1 {
 .input-area {
   display: flex;
   flex-direction: column;
-  /* margin: 0 10%; */
 }
 
 .input-area label {
   margin: 5px 0;
   font-size: 0.8rem;
   font-weight: 600;
+  display: flex;
+  justify-content: space-between;
 }
+
+.error-text {
+  color: red;
+  display: none;
+}
+
 .input-area input {
   padding: 4%;
   font-family: "Ubuntu", sans-serif;
@@ -83,30 +105,51 @@ h1 {
 }
 
 input::placeholder {
-    color: hsl(231, 11%, 85%);
-    font-weight: bold;
-    font-size: 0.9rem;
+  color: hsl(231, 11%, 85%);
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
-.next-step, .go-back {  
+.annual-choice {
+  display: none;
+}
+
+.next-step,
+.go-back {
   color: white;
   background-color: hsl(213, 96%, 18%);
   padding: 10px 15px;
   border-radius: 5px;
-  font-family: "Ubuntu", sans-serif;  
+  font-family: "Ubuntu", sans-serif;
+  cursor: pointer;
+  border: none;
+  float: right;
 }
 
-.next-step {
-  float: right;
-  margin-right: -5%;
-  margin-top: 50%;
+.navigation-buttons {
+  display: none;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.navigation-buttons-p1 {
+  justify-content: flex-end;
+}
+
+.next-step:hover {
+  background-color: hsl(229, 24%, 87%);
 }
 
 .go-back {
   float: left;
-  margin-top: 50%;
+  background-color: white;
+  color: hsl(231, 11%, 61%);
+  font-weight: 600;
 }
 
+.go-back:hover {
+  color: hsl(213, 96%, 18%);
+}
 
 .step,
 .sidebar-text {
@@ -124,55 +167,415 @@ input::placeholder {
   display: none;
 }
 
-.choice {
-  border: 1px solid hsl(229, 24%, 87%);;
+.monthly-choice,
+.annual-choice {
+  border: 1px solid hsl(229, 24%, 87%);
   border-radius: 5px;
   margin: 5% 0;
   display: flex;
-  align-items:center;
-  cursor:pointer;
+  align-items: center;
+  cursor: pointer;
 }
 
-.choice:hover {
+.annual-choice {
+  display: none;
+}
+
+.monthly-choice:hover,
+.annual-choice:hover {
   border-color: hsl(243, 100%, 62%);
   background-color: hsl(217, 100%, 97%);
 }
 
-.choice p {
+.p3-choice-selected {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+
+.p2-choice-selected {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+
+.monthly-choice p,
+.annual-choice p {
   margin: 5%;
 }
 
-.choice img {
+.annual-choice p {
+  display: block;
+}
+
+.monthly-choice img,
+.annual-choice img {
   padding: 15px 0px 15px 15px;
 }
 
 span.bold-text {
-  font-weight:700;
+  font-weight: 700;
   display: block;
   margin-bottom: 2px;
 }
 
+span.bold-text-p3 {
+  font-size: 0.95rem;
+}
+
 span.price {
-  color:hsl(229, 24%, 70%);
-  font-size: .85rem;
-  padding-top: 5px;
+  color: hsl(229, 24%, 70%);
+  font-size: 0.85rem;
+  display: block;
+}
+
+span.price-p3 {
+  color: hsl(229, 24%, 70%);
+  font-size: 0.85rem;
+}
+
+.monthly-price-p3 {
+  display: block;
+}
+
+.annual-price-p3 {
+  display: none;
+}
+
+span.smaller-text {
+  color: hsl(229, 24%, 70%);
+  font-size: 0.7rem;
+}
+
+span.two-months-free {
+  font-size: 0.75rem;
+}
+
+.monthly-yearly-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(231, 100%, 98%);
+  padding: 3% 18%;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.switch input[type="checkbox"] {
+  -webkit-appearance: none;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 25px;
+  background-color: hsl(213, 96%, 18%);
+  transition: background 0.3s;
+  outline: none;
+  cursor: pointer;
+}
+
+.switch input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  padding: 2px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%; /* makes a circle toggle */
+  height: 0.5rem;
+  width: 0.5rem;
+  background-color: rgb(255, 255, 255);
+  transition: left 0.3s;
+}
+
+.middle-text {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px;
+}
+
+.step-three {
+  margin: 0 -2%;
+}
+
+.monthly-choice-p3 {
+  display: grid;
+  grid-template-columns: 15% 65% 5%;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+  margin: 5% 0;
+  /* display: flex; */
+  align-items: center;
+  cursor: pointer;
+}
+
+span.price-p3 {
+  color: hsl(243, 100%, 62%);
+}
+
+input[type="checkbox"].options {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+input[type="checkbox"] + label:before {
+  content: url("./assets/images/icon-checkmark.png");
+  border: 0.1em solid hsl(229, 24%, 87%);
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 0.9em;
+  height: 0.8em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  margin-left: 0.8em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.2s;
+}
+
+input[type="checkbox"] + label:active:before {
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: hsl(243, 100%, 62%);
+  border-color: hsl(243, 100%, 62%);
+  color: #fff;
+}
+
+.checkbox-ticked {
+  background-color: hsl(243, 100%, 62%);
+  border-color: hsl(243, 100%, 62%);
+  color: #fff;
+}
+
+.switch input:checked {
+  background-color: hsl(213, 96%, 18%);
+}
+
+.switch input:checked::after {
+  left: 70%; /* moves the circle to the right*/
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+.totals-container {
+  display: grid;
+  background-color: hsl(217, 100%, 97%);
+  padding: 10px;
+  border-radius: 10px;
+  color: hsl(229, 24%, 70%);
+  font-size: 0.85rem;
+  width: 144%;
+}
+
+.total-cost,
+.total-price-p4 {
+  color: hsl(229, 24%, 70%);
+  font-size: 0.95rem;
+  padding: 20px 10px 0;
+  grid-row: 6;
+}
+
+.total-price-p4 {
+  text-align: right;
+  color: hsl(243, 100%, 62%);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+#plan-holder {
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+  padding-bottom: 0;
+  margin-top: 5px;
+}
+
+a {
+  color: hsl(229, 24%, 70%);
+}
+
+#change-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.p4-text {
+  padding: 5px 0;
+}
+
+.price-p4 {
+  grid-column: 2;
+  text-align: right;
+  color: hsl(213, 96%, 18%);
+}
+
+.price-p4-plan {
+  vertical-align: bottom;
+  margin-top: 10px;
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+  text-align: right;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid hsl(229, 24%, 70%);
+  width: 100%;
+  grid-column: 1 / span 2;
+}
+
+.step-five.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-five img {
+  width: 50px;
+  margin-top: 25%;
+}
+
+.step-five p {
+  text-align: center;
+  color: hsl(231, 11%, 61%);
+  line-height: 25px;
+  margin-top: 5px;
+}
+
+.thanks {
+  margin: 16px -10px 0 -10px;
 }
 
 .inactive {
   display: none;
-  
 }
 
 .active {
   display: block;
-  /* position: absolute; */
-  /* top: 50px; */
+}
+
+.active-navigation {
+  display: flex;
+}
+
+.active-prices {
+  display: flex;
+}
+
+/***************************  Desktop design *************************/
+
+@media (min-width: 700px) {
+  body {
+    max-width: 1440px;
+  }
+
+  main {
+    width: 1440px;
+    height: 1024px;
+    background-color: hsl(100, 100%, 97%);
+  }
+
+  html {
+    background-color: hsl(217, 100%, 97%);
+  }
+
+  .wrapper-blank {
+    background-color: hsl(217, 100%, 97%);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .main-bkg {
+    margin: 10% 0 5%;
+    background-image: none;
+    background-color: hsl(255, 100%, 100%);
+    display: flex;
+  }
+
+  .image-container {
+    background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 2%;
+    width: 285px;
+  }
+
+  .sidebar {
+    margin: 11% 8%;
+    padding: 0 0 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 25%;
+  }
+
+  .sidebar-number {
+    line-height: 2.3em;
+    padding: 0.1em 1em;
+    margin: 4% 22% 5%;
+    font-size: 0.8em;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: bottom;
+  }
+
+  .sidebar-num-and-text {
+    display: flex;
+    margin: 19%;
+  }
+
+  .step-and-text {
+    margin: 5% 5%;
+    text-transform: uppercase;
+  }
+
+  .sidebar-text,
+  .step {
+    display: block;
+    white-space: nowrap;
+    font-size: 0.8em;
+  }
+
+  .step {
+    font-size: 0.7em;
+    color: hsl(228, 100%, 84%);
+  }
+
+  .card,
+  .card-page-one,
+  .card-page-two {
+    max-width: 45%;
+    border-radius: none;
+    padding: 3% 8% 6%;
+    box-shadow: none;
+    background-color: hsl(255, 100%, 100%);
+  }
+
+  .next-step,
+  .go-back {
+    position: relative;
+    top: -98px;
+  }
+
+  .go-back {
+    left:37%;
+  }
 }
 
 /************** Footer ****************/
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-top: 75px;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
