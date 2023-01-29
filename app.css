@@ -553,7 +553,7 @@ hr {
   .card,
   .card-page-one,
   .card-page-two {
-    max-width: 45%;
+    width: 48%;
     border-radius: none;
     padding: 3% 8% 6%;
     box-shadow: none;
@@ -567,7 +567,33 @@ hr {
   }
 
   .go-back {
-    left:37%;
+    left: 37%;
+  }
+
+  .select-options-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .monthly-choice {
+    display: flex;
+    flex-direction: column;
+    width:30%;
+    height: 150px;
+  }
+
+  .monthly-yearly-container {
+    padding: 2% 29%;
+  }
+
+  .active-prices {
+    flex-direction: column;
+    width:30%;
+    height: 150px;
+  }
+
+  .inactive {
+    display: none;
   }
 }
 

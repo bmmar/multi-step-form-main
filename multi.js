@@ -312,6 +312,9 @@ function switchPages(oldPage, newPage, oldNumber, newNumber, highlightNumber, ol
   if (!newPage.classList.contains("active")) {
     newPage.classList.add("active");
   }
+  if (newPage.classList.contains("inactive")) { 
+    newPage.classList.remove("inactive");
+  }
   if (oldNav.classList.contains("active-navigation")) {
     oldNav.classList.remove("active-navigation");
   }
@@ -330,6 +333,7 @@ function switchPages(oldPage, newPage, oldNumber, newNumber, highlightNumber, ol
 function goBackwards(oldPage, newPage, oldNumber, newNumber, highlightNumber, oldNav, newNav) {
   oldPage.classList.remove("active");
   oldNumber.classList.remove("number-highlight");
+  newPage.classList.remove("inactive");
   newPage.classList.add("active");
   newNumber.classList.toggle("number-highlight");
   if (oldNav.classList.contains("active-navigation")) {
